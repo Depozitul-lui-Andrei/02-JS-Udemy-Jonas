@@ -1,3 +1,4 @@
+/*
 //Values and Variables
 console.log("###$$$ASSIGNMENTS FILE");
 const country = "Romania";
@@ -7,19 +8,6 @@ let population = 15;
 console.log(country);
 console.log(continent);
 console.log(population);
-/*
-//random attempts
-console.log("TOYING WITH JS");
-class Shape {
-  constructor(height, width) {
-    this.height = height;
-    this.width = width;
-  }
-}
-class Rectangle extends Shape {}
-const rect = new Rectangle(3, 4);
-console.log(rect);
-*/
 
 const isIsland = false;
 let language;
@@ -43,3 +31,4 @@ const description1 =
   " million people speak " +
   language;
 console.log(description1);
+*/
