@@ -39,4 +39,30 @@ const bmiMark2 = massMark2 / heightMark2 ** 2;
 const bmiJohn2 = massJohn2 / (heightJohn2 * heightJohn2);
 const markHigherBMI2 = bmiMark2 > bmiJohn2;
 console.log(bmiMark2, bmiJohn2, markHigherBMI2);
+
+
+Coding Challenge #2
+Use the BMI example from Challenge #1, and the code you already wrote, and 
+improve it.
+Your tasks:
+1. Print a nice output to the console, saying who has the higher BMI. The message 
+is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+2. Use a template literal to include the BMI values in the outputs. Example: "Mark's
+BMI (28.3) is higher than John's (23.9)!"
+Hint: Use an if/else statement �
+GOOD LUCK �
+
+
+if (bmiMark1 > bmiJohn1) {
+  console.log(`Mark's BMI is higher than John's!`);
+} else {
+  console.log(`John's BMI is higher than Mark's!`);
+}
+
+if (bmiMark2 > bmiJohn2) {
+  console.log(`Mark's
+  BMI (${bmiMark2}) is higher than John's (${bmiJohn2})!`);
+} else {
+  console.log(`John's BMI (${bmiJohn2}) is higher than Mark's (${bmiMark2})!`);
+}
 */
