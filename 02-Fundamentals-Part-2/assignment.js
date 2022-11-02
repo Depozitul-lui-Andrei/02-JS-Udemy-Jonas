@@ -62,7 +62,7 @@ const china3 = percentageOfWorld3(1441);
 const romania3 = percentageOfWorld3(16);
 const usa3 = percentageOfWorld3(355);
 console.log(china3, romania3, usa3);
-*/
+
 
 `LECTURE: Functions Calling Other Functions
 1. Create a function called 'describePopulation'. Use the function type you 
@@ -86,3 +86,4 @@ function describePopulation(country, population) {
 console.log(describePopulation(`Romania`, 16));
 console.log(describePopulation(`Germania`, 83));
 console.log(describePopulation(`USA`, 350));
+*/
