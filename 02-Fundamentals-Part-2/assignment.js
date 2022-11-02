@@ -51,4 +51,15 @@ const china2 = percentageOfWorld2(1440);
 const romania2 = percentageOfWorld2(16);
 const usa2 = percentageOfWorld2(355);
 console.log(china2, romania2, usa2);
+
+
+`LECTURE: Arrow Functions
+1. Recreate the last assignment, but this time create an arrow function called 
+'percentageOfWorld3'`;
+
+const percentageOfWorld3 = (population) => (population / 7900) * 100;
+const china3 = percentageOfWorld3(1441);
+const romania3 = percentageOfWorld3(16);
+const usa3 = percentageOfWorld3(355);
+console.log(china3, romania3, usa3);
 */
