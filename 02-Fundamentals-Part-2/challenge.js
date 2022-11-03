@@ -49,4 +49,32 @@ function checkWinner(avgDolphins, avgKoalas) {
 }
 
 checkWinner(scoreDolphins, scoreKoalas);
+
+
+/////// playing with arrays and functions 🎉🎉🎉 (not in the lectures) ////////
+
+const dolphinsScore = [85, 54, 41];
+const koalasScore = [23, 34, 27];
+
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+let scoreDolphins = calcAverage(
+  dolphinsScore[0],
+  dolphinsScore[1],
+  dolphinsScore[2]
+);
+let scoreKoalas = calcAverage(koalasScore[0], koalasScore[1], koalasScore[2]);
+
+console.log(scoreDolphins, scoreKoalas);
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win (${avgKoalas} vs.${avgDolphins})`);
+  } else {
+    console.log(`Noone wins`);
+  }
+}
+
+checkWinner(scoreDolphins, scoreKoalas);
 */
