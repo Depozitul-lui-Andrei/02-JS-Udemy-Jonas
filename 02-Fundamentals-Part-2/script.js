@@ -225,3 +225,16 @@ console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is called ${jonas.friends[0]}`
 );
 */
+
+const jonas = {
+  firstName: `Jonas`,
+  lastName: `Schmedtmann`,
+  birthYear: 1991,
+  job: `teacher`,
+  friends: [`Michael`, `Steven`, `Peter`],
+  hasDriverLicense: true,
+
+  calcAge: function (birthYear) {
+    return 2037 - birthYear;
+  },
+};
