@@ -264,3 +264,19 @@ jonas.getSummary = function () {
 };
 console.log(jonas.getSummary());
 */
+
+// console.log(`Liffting weights repetition 1 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 2 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 3 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 4 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 5 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 6 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 7 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 8 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 9 🏋️‍♂️`);
+// console.log(`Liffting weights repetition 10 🏋️‍♂️`);
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 30; rep++) {
+  console.log(`Liffting weights repetition ${rep} 🏋️‍♂️`);
+}
