@@ -4,3 +4,5 @@
 const xyzabc = 22;
 
 console.log();
+
+//TO HIGHLIGHTS MUST BE CONFIGURED
