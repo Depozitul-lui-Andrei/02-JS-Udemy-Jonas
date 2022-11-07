@@ -1,5 +1,5 @@
 'use strict';
-//
+/*
 `Coding Challenge #1
 Given an array of forecasted maximum temperatures, the thermometer displays a string with the given temperatures. 
 
@@ -30,14 +30,13 @@ GOOD LUCK `;
 // Data 1
 const temperatures = [17, 21, 23];
 const temperatures2 = [12, 5, -5, 0, 4];
+// good answer, but wrong way
+// const temp = console.log(
+//   `... ${arr[0]}ºC in 1 days ... ${arr[1]}ºC in 2 days ... ${arr[2]}ºC in 3 days ...`
+// );
 
+// !!!!!!!!!!! Correct
 function printForecast(arr) {
-  // good answer, but wrong way
-  // const temp = console.log(
-  //   `... ${arr[0]}ºC in 1 days ... ${arr[1]}ºC in 2 days ... ${arr[2]}ºC in 3 days ...`
-  // );
-
-  // !!!!!!!!!!! Correct
   let temp = ``;
   for (let i = 0; i < arr.length; i++) {
     temp = temp + `${arr[i]}ºC in ${i + 1} days ...`;
@@ -49,3 +48,4 @@ function printForecast(arr) {
 
 printForecast(temperatures);
 printForecast(temperatures2);
+*/
