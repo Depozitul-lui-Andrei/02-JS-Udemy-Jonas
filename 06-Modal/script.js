@@ -1,5 +1,5 @@
 'use strict';
-// working with classes lesson and how to write DRY code
+// ❗❗❗working with classes lesson and how to write DRY code
 
 const modal = document.querySelector(`.modal`);
 const overlay = document.querySelector(`.overlay`);
@@ -23,3 +23,13 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 
 btnCloseModal.addEventListener(`click`, closeModal);
 overlay.addEventListener(`click`, closeModal);
+
+// how to listen to keyboard events
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+  if (e.key === `Escape`) {
+    if (!modal.classList.contains(`hidden`)) {
+      closeModal();
+    }
+  }
+});
