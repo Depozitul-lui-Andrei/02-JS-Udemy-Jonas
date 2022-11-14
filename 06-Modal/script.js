@@ -23,7 +23,7 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 btnCloseModal.addEventListener(`click`, closeModal);
 overlay.addEventListener(`click`, closeModal);
 
-// how to listen to keyboard events - close on ESC press
+//❗❗❗ how to listen to keyboard events - close on ESC press
 document.addEventListener('keydown', function (e) {
   console.log(e.key);
 
