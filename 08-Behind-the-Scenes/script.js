@@ -1,2 +1,2 @@
 'use strict';
-// video 3
+// video - scope and the scope chain
