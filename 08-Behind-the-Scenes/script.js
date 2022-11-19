@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -38,3 +39,53 @@ calcAge(1991);
 
 // console.log(age);
 // printAge();
+*/
+
+// HOISTING LESSON
+// Variables hoisting lesson / TDZ
+console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = `Jonas`;
+let job = `teacher`;
+const year = 1991;
+
+// Functions hoisting
+console.log(addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
+console.log(addArrow);
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+var addArrow = (a, b) => a + b;
+
+// Example
+console.log(undefined);
+if (!numProducts) deleteShoppingCart(); // numProducts is undefined in this case, and 0 is also undefined > so we get error
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log(`All products deleted!`);
+}
+
+// variables created with var will create a property in the window object (in console)
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(z === window.z);
+
+// Best practices
+// Declare variables with let and const, and at the top of the code
+// Declare functions first, then call them
