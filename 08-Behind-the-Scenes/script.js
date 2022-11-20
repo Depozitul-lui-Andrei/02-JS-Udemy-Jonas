@@ -41,6 +41,7 @@ calcAge(1991);
 // printAge();
 */
 
+/*
 // HOISTING LESSON
 // Variables hoisting lesson / TDZ
 console.log(me);
@@ -89,3 +90,5 @@ console.log(z === window.z);
 // Best practices
 // Declare variables with let and const, and at the top of the code
 // Declare functions first, then call them
+
+*/
