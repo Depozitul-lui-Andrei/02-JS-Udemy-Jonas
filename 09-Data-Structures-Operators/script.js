@@ -32,6 +32,21 @@ const restaurant = {
   },
 };
 
+// Destructuring Objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+/*
+///////////////////////
+// Destructuring Arrays
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -69,3 +84,4 @@ console.log(i, j, k);
 // Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
