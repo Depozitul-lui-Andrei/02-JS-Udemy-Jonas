@@ -68,6 +68,18 @@ const rest2 = {
 };
 
 /*
+// Looping arrays: the for-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+*/
+
+/*
 // OR assignment operator (assigns value to variable if variable is currently falsy)
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
