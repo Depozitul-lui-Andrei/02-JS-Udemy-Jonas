@@ -15,7 +15,8 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day-${2 + 4}`]: {
+  // [`day-${2 + 4}`]: {// can be computed
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -54,8 +55,38 @@ const restaurant = {
   },
 };
 
-// Logical assignment operators
+// Optional chaining (?.)
 
+// if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// console.log(restaurant.openingHours.mon.open); // error
+// WITH optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const days = [`mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? `closed`;
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? `Method does not exist`);
+console.log(restaurant.orderRisotto?.(0, 1) ?? `Method does not exist`);
+
+// Arrays
+const users = [{ name: `Jonas`, email: `hello@jonas.io` }];
+// const users = [];
+console.log(users[0]?.name) ?? `User array empty`;
+
+if (users.length > 0) console.log(users[0].name);
+else console.log(`User array empty`); // same as above
+
+/*
+// Logical assignment operators
 const rest1 = {
   name: `Capri`,
   // numGuests: 20,
@@ -66,9 +97,9 @@ const rest2 = {
   name: `La Piazza`,
   owner: `Giovani Rossi`,
 };
+*/
 
 //Enhanced object literals
-
 /*
 // Looping arrays: the for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
