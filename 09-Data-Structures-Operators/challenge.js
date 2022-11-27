@@ -1,6 +1,5 @@
 'use strict';
 
-/*
 `Coding Challenge #1
 We're building a football betting app (soccer for my American friends �)!
 Suppose we get data from a web service about a certain game ('game' variable on 
@@ -71,27 +70,27 @@ const game = {
 };
 // 1.
 const [players1, players2] = game.players;
-console.log(players1);
-console.log(players2);
+// console.log(players1);
+// console.log(players2);
 
 // 2.
 const [gk, ...fieldPlayers] = players1;
-console.log(gk);
-console.log(fieldPlayers);
+// console.log(gk);
+// console.log(fieldPlayers);
 
 // 3.
 const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// console.log(allPlayers);
 
 // 4.
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-console.log(players1Final);
+// console.log(players1Final);
 
 // 5.
 const { team1, x: draw, team2 } = game.odds; // const{odds: { team1, x: draw, team 2}} game;
-console.log(team1);
-console.log(draw);
-console.log(team2);
+// console.log(team1);
+// console.log(draw);
+// console.log(team2);
 
 // 6.
 const printGoals = function (...players) {
@@ -104,4 +103,65 @@ printGoals(...game.scored);
 team1 < team2 && console.log(`Team 1 is more likely to win`);
 team2 < team1 && console.log(`Team 2 is more likely to win`);
 // END
-*/
+
+`Coding Challenge #2
+Let's continue with our football betting app! Keep using the 'game' variable from 
+before.
+Your tasks:
+1. Loop over the game.scored array and print each player name to the console, 
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already 
+studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them 
+(except for "draw"). Hint: Note how the odds and the game objects have the 
+same property names �
+4. Bonus: Create an object called 'scorers' which contains the names of the 
+players who scored as properties, and the number of goals as the value. In this 
+game, it will look like this:
+{
+ Gnarby: 1,
+ Hummels: 1,
+ Lewandowski: 2
+}
+GOOD LUCK `;
+
+// 1.
+for (let i = 0; i < game.scored.length; i++) {
+  console.log(`Goal ${i + 1}: ${game.scored[i]}`);
+}
+
+// 2.
+const calcAverage = (game.odds.team1 + game.odds.team2 + game.odds.x) / 3;
+console.log(calcAverage);
+
+// 3.
+function printOdds() {
+  console.log(`Odd of victory ${game.team1}: ${game.odds.team1}`);
+  console.log(`Odd of victory draw: ${game.odds.x}`);
+  console.log(`Odd of victory ${game.team2}: ${game.odds.team2}`);
+}
+printOdds();
+
+// 4.
+const scorers = {
+  Lewandowski: 0,
+  Gnarby: 0,
+  Hummels: 0,
+};
+
+for (let i = 0; i < game.scored.length; i++) {
+  if (game.scored[i] === 'Lewandowski') {
+    scorers.Lewandowski += 1;
+  }
+  if (game.scored[i] === 'Gnarby') {
+    scorers.Gnarby += 1;
+  }
+  if (game.scored[i] === 'Hummels') {
+    scorers.Hummels += 1;
+  }
+}
+console.log(scorers);
