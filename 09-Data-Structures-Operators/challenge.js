@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 `Coding Challenge #1
 We're building a football betting app (soccer for my American friends �)!
 Suppose we get data from a web service about a certain game ('game' variable on 
@@ -130,38 +130,68 @@ game, it will look like this:
 GOOD LUCK `;
 
 // 1.
-for (let i = 0; i < game.scored.length; i++) {
-  console.log(`Goal ${i + 1}: ${game.scored[i]}`);
-}
+//my attempt without latest lectures
+// for (let i = 0; i < game.scored.length; i++) {
+//   console.log(`Goal ${i + 1}: ${game.scored[i]}`);
+// }
+
+for (const [i, player] of game.scored.entries())
+  console.log(`Goal ${i + 1}: ${player}`);
 
 // 2.
-const calcAverage = (game.odds.team1 + game.odds.team2 + game.odds.x) / 3;
-console.log(calcAverage);
+// my attempt without latest lectures
+// const calcAverage = (game.odds.team1 + game.odds.team2 + game.odds.x) / 3;
+// console.log(calcAverage);
+
+let avg = 0;
+for (const odd of Object.values(game.odds)) avg += odd;
+avg /= Object.values(game.odds).length;
+console.log(avg);
 
 // 3.
-function printOdds() {
-  console.log(`Odd of victory ${game.team1}: ${game.odds.team1}`);
-  console.log(`Odd of victory draw: ${game.odds.x}`);
-  console.log(`Odd of victory ${game.team2}: ${game.odds.team2}`);
+// my attempt without latest lectures
+// function printOdds() {
+//   console.log(`Odd of victory ${game.team1}: ${game.odds.team1}`);
+//   console.log(`Odd of victory draw: ${game.odds.x}`);
+//   console.log(`Odd of victory ${game.team2}: ${game.odds.team2}`);
+// }
+// printOdds();
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === `x` ? draw : `victory ${game[team]}`;
+  console.log(`Odd of victory ${teamStr}: ${odd}`);
 }
-printOdds();
 
 // 4.
-const scorers = {
-  Lewandowski: 0,
-  Gnarby: 0,
-  Hummels: 0,
-};
+// works but wrong
+// const scorers = {
+//   Lewandowski: 0,
+//   Gnarby: 0,
+//   Hummels: 0,
+// };
 
-for (let i = 0; i < game.scored.length; i++) {
-  if (game.scored[i] === 'Lewandowski') {
-    scorers.Lewandowski += 1;
-  }
-  if (game.scored[i] === 'Gnarby') {
-    scorers.Gnarby += 1;
-  }
-  if (game.scored[i] === 'Hummels') {
-    scorers.Hummels += 1;
-  }
+// for (let i = 0; i < game.scored.length; i++) {
+//   if (game.scored[i] === 'Lewandowski') {
+//     scorers.Lewandowski += 1;
+//   } else if (game.scored[i] === 'Gnarby') {
+//     scorers.Gnarby += 1;
+//   } else if (game.scored[i] === 'Hummels') {
+//     scorers.Hummels += 1;
+//   }
+// }
+// console.log(scorers);
+
+// works - but old lesson used
+// const scorers= {};
+// for (let i = 0; i < game.scored.length; i++) {
+//   let player = game.scored[i];
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+// console.log(scorers);
+
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers);
+*/
