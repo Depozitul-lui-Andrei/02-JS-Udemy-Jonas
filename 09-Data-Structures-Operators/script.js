@@ -55,7 +55,44 @@ const restaurant = {
   },
 };
 
+/////////////////////////////////////////////////
+// Sets
+const ordersSet = new Set([
+  `Pasta`,
+  `Pizza`,
+  `Pizza`,
+  `Risotto`,
+  `Pasta`,
+  `Pizza`,
+]);
+console.log(ordersSet);
+
+console.log(new Set(`Jonas`));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has(`Pizza`));
+console.log(ordersSet.has(`Bread`));
+ordersSet.add(`Garlic Bread`);
+ordersSet.add(`Garlic Bread`);
+ordersSet.delete(`Risotto`);
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = [`Waiter`, `Chef`, `Waiter`, `Manager`, `Chef`, `Waiter`];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(
+  new Set([`Waiter`, `Chef`, `Waiter`, `Manager`, `Chef`, `Waiter`]).size
+);
+
+console.log(new Set(`jonasschmedtmann`).size);
+
 /*
+/////////////////////////////////////////////////
 // Looping objects> object keys, values, entries
 // Property NAMES (.keys)
 const properties = Object.keys(openingHours);
@@ -82,6 +119,7 @@ for (const [day, { open, close }] of entries) {
 */
 
 /*
+////////////////////////////////////////////////////////////
 // Optional chaining (?.)
 
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
@@ -114,6 +152,7 @@ else console.log(`User array empty`); // same as above
 */
 
 /*
+////////////////////////////////////////////////////////////
 // Logical assignment operators
 const rest1 = {
   name: `Capri`,
@@ -127,6 +166,7 @@ const rest2 = {
 };
 */
 
+////////////////////////////////////////////////////////////
 //Enhanced object literals
 /*
 // Looping arrays: the for-of loop
@@ -141,6 +181,7 @@ for (const [i, el] of menu.entries()) {
 */
 
 /*
+////////////////////////////////////////////////////////////
 // OR assignment operator (assigns value to variable if variable is currently falsy)
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
@@ -163,6 +204,7 @@ console.log(rest2);
 */
 
 /*
+////////////////////////////////////////////////////////////
 // Nullish coalescing operator ??
 
 restaurant.numGuests = 0;
@@ -175,6 +217,7 @@ console.log(guestsCorrect);
 */
 
 /*
+////////////////////////////////////////////////////////////
 // Short circuiting (&& and ||)
 // Use ANY data type, return ANY data type, short-circuiting
 console.log(3 || `Jonas`);
@@ -206,6 +249,7 @@ restaurant.orderPizza && restaurant.orderPizza(`mushrooms`, `spinach`);
 */
 
 /*
+////////////////////////////////////////////////////////////
 // REST pattern - collects elements unused in destructuring
 
 // 1 Destructuring
@@ -246,6 +290,7 @@ restaurant.orderPizza(`mushrooms`);
 */
 
 /*
+//////////////////////////////////////////
 // Spread operator
 
 const arr = [7, 8, 9];
@@ -341,7 +386,7 @@ console.log(o, c);
 
 //
 /*
-///////////////////////
+////////////////////////////////////
 // Destructuring Arrays
 const arr = [2, 3, 4];
 const a = arr[0];
