@@ -139,6 +139,29 @@ console.log(announcement.replaceAll(`door`, `gate`));
 console.log(announcement.replace(/door/g, `gate`));
 
 // Booleans
+const plane2 = `Airbus A320neo`;
+console.log(plane2.includes(`A320`));
+console.log(plane2.includes(`Beoing`));
+console.log(plane2.startsWith(`Air`));
+
+if (plane2.startsWith(`Airbus`) && plane2.endsWith(`neo`)) {
+  console.log(`Part of the NEW Airbus family`);
+}
+
+// Practice exercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes(`knife`) || baggage.includes(`gun`)) {
+    console.log(`You are NOT allowed on board`);
+  } else {
+    console.log(`Welcome aboard!`);
+  }
+};
+
+checkBaggage(`I have a laptop, some Food and a pocket Knife`);
+checkBaggage(`I have some socks and a camera`);
+checkBaggage(`I have some snacks and a gun for protection`);
 
 /////////////////////////////////////////////////
 // Summary: which data structure to use?
