@@ -58,6 +58,10 @@ const restaurant = {
 /////////////////////////////////////////////////
 // Strings part 1
 
+/*
+/////////////////////////////////////////////////
+// Strings part 1
+
 const airline = `TAP Air Portugal`;
 const plane = `A320`;
 
@@ -96,6 +100,7 @@ checkMiddleSeat(`3E`);
 console.log(new String(`jonas`));
 console.log(typeof new String(`jonas`));
 console.log(typeof new String(`jonas`).slice(1));
+*/
 
 /////////////////////////////////////////////////
 // Summary: which data structure to use?
