@@ -103,6 +103,13 @@ console.log(typeof new String(`jonas`).slice(1));
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
 
+// Fix capitalization in name
+const passenger = `jOnAS`; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
 /////////////////////////////////////////////////
 // Summary: which data structure to use?
 
