@@ -109,6 +109,36 @@ const passengerLower = passenger.toLowerCase();
 const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
+// small challenge
+const passengerFixed = function (str) {
+  const passengerL = str.toLowerCase();
+  const passengerC = passengerL[0].toUpperCase() + passengerL.slice(1);
+  console.log(passengerC);
+};
+// passengerFixed(passenger);
+
+// Comparing emails
+const email = `hello@jonas.io`;
+const loginEmail = `  Hello@Jonas.Io \n`;
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing
+const priceGB = `288,97£`;
+const priceUS = priceGB.replace(`£`, `$`).replace(`,`, `.`);
+console.log(priceUS);
+
+const announcement = `All passengers come to boarding door 23. Boarding door 23!`;
+console.log(announcement.replaceAll(`door`, `gate`));
+
+console.log(announcement.replace(/door/g, `gate`));
+
+// Booleans
 
 /////////////////////////////////////////////////
 // Summary: which data structure to use?
