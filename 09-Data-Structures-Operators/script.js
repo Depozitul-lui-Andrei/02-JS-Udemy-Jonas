@@ -164,6 +164,19 @@ checkBaggage(`I have some socks and a camera`);
 checkBaggage(`I have some snacks and a gun for protection`);
 
 /////////////////////////////////////////////////
+// Strings part 3
+// Split
+console.log(`a+very+nice+string`.split(`+`));
+console.log(`Jonas Schmedtmann`.split(` `));
+
+const [firstName, lastname] = `Jonas Schmedtmann`.split(` `);
+// Join
+const newName = [`Mr.`, firstName, lastname.toUpperCase()].join(` `);
+const newName2 = [`Mr.`, firstName, lastname.toUpperCase()].join(`-`);
+console.log(newName);
+console.log(newName2);
+
+/////////////////////////////////////////////////
 // Summary: which data structure to use?
 
 /*
