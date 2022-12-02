@@ -51,6 +51,7 @@ const restaurant = {
   },
 };
 
+/*
 // String methods - practice
 // Data needed for a later exercise
 const flights =
@@ -69,6 +70,7 @@ for (const flight of flights.split(`+`)) {
   )})`.padStart(45);
   console.log(output);
 }
+*/
 
 /*
 /////////////////////////////////////////////////
