@@ -38,3 +38,41 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
 };
+poll.registerNewAnswer = function () {
+  const inputNr = Number(
+    prompt(`What is your favourite programming language?\n
+  0: JavaScript\n
+  1: Python\n
+  2: Rust\n
+  3: C++\n
+  (Write option number)`)
+  );
+
+  if (inputNr >= 0 && inputNr <= 3) {
+    poll.answers[inputNr] += 1;
+  }
+  return poll.displayResults();
+};
+document
+  .querySelector(`.poll`)
+  .addEventListener(`click`, poll.registerNewAnswer);
+console.log(poll);
+
+poll.displayResults = function () {
+  console.log(poll.answers);
+  this.answers === Array;
+};
+
+//
+// // With event listners
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
+//   this.planes++;
+//   console.log(this.planes);
+// };
+// // lufthansa.buyPlane();
+
+// document
+//   .querySelector(`.buy`)
+//   .addEventListener(`click`, lufthansa.buyPlane.bind(lufthansa)); // bind tells evend listner that this keyword points to lufthansa, not the button
