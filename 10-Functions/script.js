@@ -96,3 +96,69 @@ document.body.addEventListener(`click`, high5);
 
 // Abstraction = a way to reduce complexity and allow efficient design and implementation in complex software systems
 */
+
+/*
+// Functions returning functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+greet(`Hello`)(`Jonas`);
+
+const greeterHey = greet(`Hey`);
+greeterHey(`Jonas`);
+greeterHey(`Steven`);
+
+const greet2 = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greet2(`Hello`)(`Steven`);
+*/
+
+/*
+// The call and apply methods
+const lufthansa = {
+  airline: `Lufthansa`,
+  iataCode: `LH`,
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, `Jonas Schmedtmann`);
+lufthansa.book(536, `John Smith`);
+
+const eurowings = {
+  airline: `Eurowings`,
+  iataCode: `EW`,
+  bookings: [],
+};
+
+// Call method - (uses this keyword and parameters)
+const book = lufthansa.book;
+// book(23, `Sarah Williams`); // does not work (this. - is undefined)
+book.call(eurowings, 23, `Sarah Williams`); // call() - manually define this keyword
+console.log(eurowings);
+book.call(lufthansa, 239, `Mary Cooper`);
+console.log(lufthansa);
+
+const swiss = {
+  airline: `Swiss Air Lines`,
+  iataCode: `LX`,
+  bookings: [],
+};
+book.call(swiss, 583, `Mary Cooper`);
+
+// Apply method - uses (this keyword and array of data) NOR THAT USED
+const flightData = [583, `George Cooper`];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+//
+book.call(swiss, ...flightData); // same with 156 line
+*/
+
+// The bind method
