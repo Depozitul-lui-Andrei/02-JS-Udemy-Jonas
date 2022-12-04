@@ -215,4 +215,29 @@ const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
 */
-//
+
+/*
+// Immediately invoked function expressions (IIFE)
+const runOnce = function () {
+  console.log(`This will never run again`);
+};
+runOnce();
+
+// function statement turned to expression with (), then called with () at end
+(function () {
+  console.log(`This will never run again`);
+  const isPrivate = 23;
+})();
+
+// console.log(isPrivate); // not working
+
+(() => console.log(`This will ALSO never run again`))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 22;
+}
+// console.log(isPrivate); // not working
+*/
+
+// Closures
