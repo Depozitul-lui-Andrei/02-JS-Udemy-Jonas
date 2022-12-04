@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 `Coding Challenge #1
 Let's build a simple poll app!
 
@@ -37,7 +38,37 @@ const poll = {
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
+  registerNewAnswer2() {
+    const answer2 = Number(
+      prompt(
+        `${this.question}\n${this.options.join(`\n`)}\n(Write option number)`
+      )
+    );
+    console.log(answer2);
+    typeof answer2 === `number` &&
+      answer2 < this.answers.length &&
+      this.answers[answer2]++;
+
+    this.displayResults2();
+    this.displayResults2(`string`);
+  },
+  displayResults2(type = `array`) {
+    if (type === `array`) {
+      console.log(this.answers);
+    } else if (type === `string`) {
+      console.log(`Poll results are ${this.answers.join(`, `)}`);
+    }
+  },
 };
+//
+// document
+//   .querySelector(`.poll`)
+//   .addEventListener(`click`, poll.registerNewAnswer2.bind(poll));
+
+// poll.displayResults2.call({ answers: [5, 2, 3] }, `string`);
+// poll.displayResults2.call({ answers: [1, 5, 3, 9, 6, 1] }, `string`);
+
+// My attempt
 poll.registerNewAnswer = function () {
   const inputNr = Number(
     prompt(`What is your favourite programming language?\n
@@ -48,31 +79,28 @@ poll.registerNewAnswer = function () {
   (Write option number)`)
   );
 
-  if (inputNr >= 0 && inputNr <= 3) {
-    poll.answers[inputNr] += 1;
+  if (typeof inputNr === `number` && inputNr >= 0 && inputNr <= 3) {
+    this.answers[inputNr] += 1;
   }
-  return poll.displayResults();
+  return this.displayResults();
 };
 document
   .querySelector(`.poll`)
-  .addEventListener(`click`, poll.registerNewAnswer);
-console.log(poll);
+  .addEventListener(`click`, poll.registerNewAnswer.bind(poll));
 
-poll.displayResults = function () {
-  console.log(poll.answers);
-  this.answers === Array;
+poll.displayResults = function (type = `array`) {
+  // console.log(type);
+  if (type === `array`) {
+    console.log(this.answers);
+  } else if (type === `string`) {
+    console.log(`Poll results are ${this.answers.join(`, `)}`);
+  }
 };
 
-//
-// // With event listners
-// lufthansa.planes = 300;
-// lufthansa.buyPlane = function () {
-//   console.log(this);
-//   this.planes++;
-//   console.log(this.planes);
-// };
-// // lufthansa.buyPlane();
+// poll.displayResults.call({ answers: [5, 2, 3] }, `string`);
+// poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, `string`);
+// data1 [5, 2, 3];
+// data2 [1, 5, 3, 9, 6, 1];
 
-// document
-//   .querySelector(`.buy`)
-//   .addEventListener(`click`, lufthansa.buyPlane.bind(lufthansa)); // bind tells evend listner that this keyword points to lufthansa, not the button
+// console.log(poll);
+*/
