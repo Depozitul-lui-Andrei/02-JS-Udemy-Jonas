@@ -1,5 +1,5 @@
 'use strict';
-
+//🌟🔴🟢🌟
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
@@ -60,6 +60,31 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+
+/////////////////////////////////////////////////
+// 🟢 Creating DOM elements
+// .textContent - returns text / .innerHTML - returns everything including html
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = ``;
+  // .textContent = 0
+
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? `deposit` : `withdrawal`;
+
+    const html = `
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+      <div class="movements__value">${mov}</div>
+    </div>
+    `;
+
+    containerMovements.insertAdjacentHTML(`afterbegin`, html);
+  });
+};
+
+displayMovements(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -176,6 +201,3 @@ currenciesUnique.forEach(function (value, _value, map) {
 
 /////////////////////////////////////////////////
 // 🔴 Project: "Bankist" app
-
-/////////////////////////////////////////////////
-// 🔴 Creating DOM elements
