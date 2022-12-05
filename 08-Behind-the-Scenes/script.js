@@ -1,5 +1,5 @@
 'use strict';
-
+// 🌟🔴🌟
 /*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
@@ -42,7 +42,7 @@ calcAge(1991);
 */
 
 /*
-// HOISTING LESSON
+// 🔴 HOISTING LESSON
 // Variables hoisting lesson / TDZ
 console.log(me);
 // console.log(job);
@@ -94,7 +94,7 @@ console.log(z === window.z);
 */
 
 /*
-// this keyword
+// 🔴 this keyword
 console.log(this);
 
 const calcAge = function (birthYear) {
@@ -131,7 +131,7 @@ f();
 */
 
 /*
-// var firstName = `Matilda`;
+//🔴 var firstName = `Matilda`;
 
 const jonas = {
   firstName: `Jonas`,
@@ -179,6 +179,7 @@ addArrow(2, 5, 8);
 */
 
 /*
+//🔴
 let age = 30;
 let oldAge = age;
 age = 31;
@@ -194,7 +195,7 @@ friend.age = 27;
 console.log(`Friend: `, friend); // name: 'Jonas', age: 27
 console.log(`Me: `, me); // name: 'Jonas', age: 27
 */
-
+//🔴
 let lastName = `Williams`;
 let oldLastName = lastName;
 lastName = `Davis`;

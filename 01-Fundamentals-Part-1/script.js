@@ -1,4 +1,5 @@
 /*
+//🌟🔴🌟
 let js = "amazing";
 console.log(40 + 8 + 23 - 10);
 
@@ -11,7 +12,7 @@ console.log(firstName);
 console.log(firstName);
 console.log(firstName);
 
-// Variable name conventions
+// 🔴 Variable name conventions
 let jonas_matilda = "JM";
 let $function = 27;
 
@@ -74,7 +75,7 @@ const firstName = "Jonas";
 const lastName = "Schmedtmann";
 console.log(firstName + " " + lastName);
 
-// Assignment operatiors
+// 🔴 Assignment operatiors
 let x = 10 + 5; // 15
 x += 10; // x = x + 10 =25
 x *= 4; // x = x * 4 = 100
@@ -82,7 +83,7 @@ x++; // x = x + 1
 x--; // x = x - 1
 console.log(x);
 
-// Comparison operators
+// 🔴 Comparison operators
 console.log(ageJonas > ageSarah); // >, <, >=, <=
 console.log(ageSarah >= 18);
 
@@ -147,7 +148,7 @@ if (birthYear <= 2000) {
 console.log(century);
 
 
-// type conversion
+// 🔴 type conversion
 const inputYear = "1991";
 console.log(Number(inputYear), inputYear);
 console.log(Number(inputYear) + 18);
@@ -170,7 +171,7 @@ n = n - 1;
 console.log(n);
 
 
-// 5 falsy values: 0, '', undefined, null, NaN
+// 🔴 5 falsy values: 0, '', undefined, null, NaN
 
 console.log(Boolean(0));
 console.log(Boolean(undefined));
@@ -282,12 +283,12 @@ if (day === `monday`) {
 }
 
 
-//expressions
+// 🔴 expressions
 3 + 4;
 1991;
 true && false && !false;
 
-//statements
+// 🔴 statements
 if (23 > 10) {
   const str = `23 is bigger`;
 }

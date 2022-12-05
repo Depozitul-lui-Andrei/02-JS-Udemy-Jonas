@@ -1,5 +1,5 @@
-"use strict";
-
+'use strict';
+//🌟🔴🌟
 /*
 let hasDriversLicense = false;
 const passTest = true;
@@ -51,7 +51,7 @@ const age2 = calcAge2(1991);
 console.log(age1, age2);
 
 
-// Arrow function
+//🔴 Arrow function
 const calcAge3 = (birthYear) => 2037 - birthYear;
 const age3 = calcAge3(1991);
 console.log(age3);
@@ -150,7 +150,7 @@ console.log(ages);
 
 const friends = [`Michael`, `Steven`, `Peter`];
 
-// Add elements
+// 🔴 Add elements
 const newLength = friends.push(`Jay`); // add to end
 console.log(friends);
 console.log(newLength);
@@ -219,7 +219,7 @@ jonas.location = `Portugal`;
 jonas[`twitter`] = `@jonasschmedtman`;
 console.log(jonas);
 
-// Challenge
+// 🔴 Challenge
 // `Jonas has 3 friends and his best friend is called Michael`
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is called ${jonas.friends[0]}`
@@ -255,7 +255,7 @@ console.log(jonas.age);
 console.log(jonas.age);
 console.log(jonas.age);
 
-// Challenge
+// 🔴 Challenge
 // `Jonas is a 46-year old teacher and he has a drivers license`
 jonas.getSummary = function () {
   return `${this.firstName} is a ${this.calcAge()}-year old ${
