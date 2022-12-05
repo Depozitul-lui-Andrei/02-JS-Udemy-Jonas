@@ -163,7 +163,7 @@ for (const [i, movement] of movements.entries()) {
     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
   }
 }
-console.log(`---------------------FOREACH`);
+console.log(`---------------------🌟FOREACH🌟`);
 movements.forEach(function (mov, i, arr) {
   if (mov > 0) {
     console.log(`Movement ${i + 1}: You deposited ${mov}`);
