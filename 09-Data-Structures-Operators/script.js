@@ -1,5 +1,5 @@
 'use strict';
-
+// 🌟🔴🌟
 const weekdays = [`mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`];
 
 const openingHours = {
@@ -52,7 +52,7 @@ const restaurant = {
 };
 
 /*
-// String methods - practice
+// 🔴 String methods - practice
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -74,7 +74,7 @@ for (const flight of flights.split(`+`)) {
 
 /*
 /////////////////////////////////////////////////
-// Strings part 1
+// 🔴 Strings part 1
 
 const airline = `TAP Air Portugal`;
 const plane = `A320`;
@@ -116,7 +116,7 @@ console.log(typeof new String(`jonas`));
 console.log(typeof new String(`jonas`).slice(1));
 
 /////////////////////////////////////////////////
-// Strings part 2
+// 🔴 Strings part 2
 
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
@@ -182,7 +182,7 @@ checkBaggage(`I have some socks and a camera`);
 checkBaggage(`I have some snacks and a gun for protection`);
 
 /////////////////////////////////////////////////
-// Strings part 3
+// 🔴 Strings part 3
 // Split
 console.log(`a+very+nice+string`.split(`+`));
 console.log(`Jonas Schmedtmann`.split(` `));
@@ -240,7 +240,7 @@ planesInLine(12);
 
 /*
 /////////////////////////////////////////////////
-// Maps - iteration
+// 🔴 Maps - iteration
 
 const question = new Map([
   [`question`, `What is the best programming language in the world?`],
@@ -280,7 +280,7 @@ console.log([...question.values()]);
 
 /*
 /////////////////////////////////////////////////
-// Maps - fundamentals
+// 🔴 Maps - fundamentals
 const rest = new Map();
 rest.set(`name`, `Classico Italiano`);
 rest.set(1, `Firenze, Italiy`);
@@ -313,7 +313,7 @@ console.log(rest.get(arr));
 
 /*
 /////////////////////////////////////////////////
-// Sets
+// 🔴 Sets
 const ordersSet = new Set([
   `Pasta`,
   `Pizza`,
@@ -351,7 +351,7 @@ console.log(new Set(`jonasschmedtmann`).size);
 
 /*
 /////////////////////////////////////////////////
-// Looping objects> object keys, values, entries
+// 🔴 Looping objects> object keys, values, entries
 // Property NAMES (.keys)
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -378,7 +378,7 @@ for (const [day, { open, close }] of entries) {
 
 /*
 ////////////////////////////////////////////////////////////
-// Optional chaining (?.)
+// 🔴 Optional chaining (?.)
 
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
 if (restaurant.openingHours && restaurant.openingHours.mon)
@@ -411,7 +411,7 @@ else console.log(`User array empty`); // same as above
 
 /*
 ////////////////////////////////////////////////////////////
-// Logical assignment operators
+// 🔴 Logical assignment operators
 const rest1 = {
   name: `Capri`,
   // numGuests: 20,
@@ -427,7 +427,7 @@ const rest2 = {
 ////////////////////////////////////////////////////////////
 //Enhanced object literals
 /*
-// Looping arrays: the for-of loop
+// 🔴 Looping arrays: the for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item);
 
@@ -440,7 +440,7 @@ for (const [i, el] of menu.entries()) {
 
 /*
 ////////////////////////////////////////////////////////////
-// OR assignment operator (assigns value to variable if variable is currently falsy)
+//🔴  OR assignment operator (assigns value to variable if variable is currently falsy)
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
 // rest1.numGuests ||= 10;
@@ -463,7 +463,7 @@ console.log(rest2);
 
 /*
 ////////////////////////////////////////////////////////////
-// Nullish coalescing operator ??
+// 🔴 Nullish coalescing operator ??
 
 restaurant.numGuests = 0;
 const guests3 = restaurant.numGuests || 10;
@@ -476,7 +476,7 @@ console.log(guestsCorrect);
 
 /*
 ////////////////////////////////////////////////////////////
-// Short circuiting (&& and ||)
+// 🔴 Short circuiting (&& and ||)
 // Use ANY data type, return ANY data type, short-circuiting
 console.log(3 || `Jonas`);
 console.log(`` || `Jonas`);
@@ -508,7 +508,7 @@ restaurant.orderPizza && restaurant.orderPizza(`mushrooms`, `spinach`);
 
 /*
 ////////////////////////////////////////////////////////////
-// REST pattern - collects elements unused in destructuring
+// 🔴 REST pattern - collects elements unused in destructuring
 
 // 1 Destructuring
 // SPREAD because on RIGHT side of =
@@ -549,7 +549,7 @@ restaurant.orderPizza(`mushrooms`);
 
 /*
 //////////////////////////////////////////
-// Spread operator
+// 🔴 Spread operator
 
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -613,7 +613,7 @@ restaurant.orderDelivery({
   starterIndex: 1,
 });
 
-// Destructuring Objects
+// 🔴 Destructuring Objects
 
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -645,7 +645,7 @@ console.log(o, c);
 //
 /*
 ////////////////////////////////////
-// Destructuring Arrays
+// 🔴 Destructuring Arrays
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];

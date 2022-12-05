@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-// Default parameters
+// 🌟🔴🌟 Default parameters 
 const bookings = [];
 const createBooking = function (
   flightNum,
@@ -29,7 +29,7 @@ createBooking(`LH123`, undefined, 1000);
 */
 
 /*
-// How passing arguments works: value vs refference
+// 🔴 How passing arguments works: value vs refference
 const flight = `LH234`;
 const jonas = {
   name: `Jonas Schmedtmann`,
@@ -67,7 +67,7 @@ checkIn(flight, jonas);
 //
 
 /*
-// Functions accepting callback functions
+// 🔴 Functions accepting callback functions
 const oneWord = function (str) {
   return str.replaceAll(` `, ``).toLowerCase();
 };
@@ -98,7 +98,7 @@ document.body.addEventListener(`click`, high5);
 */
 
 /*
-// Functions returning functions
+// 🔴Functions returning functions
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -115,7 +115,7 @@ greet2(`Hello`)(`Steven`);
 */
 
 /*
-// The call and apply methods
+// 🔴The call and apply methods
 const lufthansa = {
   airline: `Lufthansa`,
   iataCode: `LH`,
@@ -217,7 +217,7 @@ console.log(addVAT2(23));
 */
 
 /*
-// Immediately invoked function expressions (IIFE)
+// 🔴 Immediately invoked function expressions (IIFE)
 const runOnce = function () {
   console.log(`This will never run again`);
 };
@@ -241,7 +241,7 @@ runOnce();
 */
 
 /*
-// Closures
+// 🔴Closures
 const secureBooking = function () {
   let passengerCoung = 0;
 
