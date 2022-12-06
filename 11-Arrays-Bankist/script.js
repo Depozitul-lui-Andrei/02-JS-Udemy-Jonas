@@ -203,4 +203,5 @@ currenciesUnique.forEach(function (value, _value, map) {
 // 🔴 Project: "Bankist" app
 
 /////////////////////////////////////////////////
-// 🔴 Data transformations: map, filter, reduce
+// 🔴 Data transformations:
+//   Array methods: map, filter, reduce
