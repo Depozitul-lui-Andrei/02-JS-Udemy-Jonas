@@ -205,3 +205,7 @@ currenciesUnique.forEach(function (value, _value, map) {
 /////////////////////////////////////////////////
 // 🔴 Data transformations:
 //   Array methods: map, filter, reduce
+
+// map returns new array
+// filter returns new array that passed a specified condition
+// reduce reduces all array elements to one single value
