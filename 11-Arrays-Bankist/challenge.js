@@ -109,23 +109,12 @@ Test data:
 GOOD LUCK 😀`;
 
 const calcAverageHumanAge3 = (ages) => {
-  const humanAges = ages.map((age) =>
-    (age <= 2 ? age * 2 : 16 + age * 4).filter((age) => age > 18)
-  );
+  const humanAges = ages
+    .map((age) => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter((age) => age > 18)
+    .reduce((acc, age, i, arr) => (acc += age / arr.length), 0);
   console.log(humanAges);
-
-  // const avgHumanAge =
-  //   adults.reduce((acc, age) => (acc += age), 0) / adults.length;
-  // console.log(avgHumanAge);
-  const avgHumanAge = adults.reduce(
-    (acc, age, i, arr) => (acc += age / arr.length),
-    0
-  );
-  console.log(avgHumanAge);
-
-  // 2 3. (2+3)/2 = 2.5 or 2/2 | 3/2
-
-  return avgHumanAge;
+  return humanAges;
 };
-// calcAverageHumanAge3([5, 2, 4, 1, 15, 8, 3]);
-// calcAverageHumanAge3([16, 6, 10, 5, 6, 1, 4]);
+calcAverageHumanAge3([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAge3([16, 6, 10, 5, 6, 1, 4]);
