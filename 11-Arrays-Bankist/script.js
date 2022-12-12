@@ -64,9 +64,10 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // 🟢 Creating DOM elements
 // .textContent - returns text / .innerHTML - returns everything including html
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = ``;
-  // .textContent = 0
+
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
   movements.forEach(function (mov, i) {
     const type = mov > 0 ? `deposit` : `withdrawal`;
@@ -135,6 +136,7 @@ const updateUI = function (acc) {
 };
 
 // 🔴Event handlers
+
 // e means event
 let currentAccount;
 
@@ -145,7 +147,7 @@ btnLogin.addEventListener(`click`, function (e) {
   currentAccount = accounts.find(
     (acc) => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     // Display UI and message
@@ -221,6 +223,14 @@ btnClose.addEventListener(`click`, function (e) {
     containerApp.style.opacity = 0;
   }
   inputCloseUsername.value = inputClosePin.value = ``;
+});
+
+let sorted = false;
+
+btnSort.addEventListener(`click`, function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -500,6 +510,7 @@ console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
 */
 
+/*
 /////////////////////////////////////////////////
 // 🔴 Flat and flatmap
 const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
@@ -521,3 +532,36 @@ const overalBalance2 = accounts
   .flatMap((acc) => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(overalBalance2);
+*/
+
+/*
+/////////////////////////////////////////////////
+// 🔴 Sorting arrays
+
+// strings
+const owners = [`Jonas`, `Zach`, `Adam`, `Martha`];
+console.log(owners);
+console.log(owners.sort());
+
+// numbers
+console.log(movements);
+
+// return < 0 - a, b (keep order)
+// return > 0 - b, a (switch order)
+
+// Ascending
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+// Descending
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (a < b) return 1;
+// });
+movements.sort((a, b) => b - a);
+console.log(movements);
+*/
