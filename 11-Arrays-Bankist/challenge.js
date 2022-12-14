@@ -241,9 +241,6 @@ dogs.some((_, i) => {
 });
 console.log(`The dog that eats an ok amount belongs to ${dogsOkAmount}`);
 
-// 8. Create a shallow copy of the 'dogs' array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects �)
-
+// 8.
 const copyDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood);
-
-// .map((arr, i) => console.log(arr))
 console.log(copyDogs);
