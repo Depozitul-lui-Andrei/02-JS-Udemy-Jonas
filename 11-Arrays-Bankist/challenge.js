@@ -163,8 +163,8 @@ const dogs = [
 ];
 
 // 1.
-const recommendedFood = dogs.map(
-  (weight, i) => (dogs[i].recommendedFood = dogs[i].weight ** 0.75 * 28)
+const recFood = dogs.map(
+  (weight, i) => (dogs[i].recFood = dogs[i].weight ** 0.75 * 28)
 );
 console.log(dogs);
 
@@ -174,14 +174,14 @@ const sarahDog = dogs
   .forEach(function (arr, i) {
     if (arr.includes(`Sarah`)) {
       // console.log(i);
-      // if (dogs[i].curFood > dogs[i].recommendedFood) {
+      // if (dogs[i].curFood > dogs[i].recFood) {
       //   console.log(`Sarah's dog is eating too much`);
-      // } else if (dogs[i].curFood < dogs[i].recommendedFood) {
+      // } else if (dogs[i].curFood < dogs[i].recFood) {
       //   console.log(`Sarah's dog is eating too little`);
       // }
       console.log(
         `Sarah's dog is eating too ${
-          dogs[i].curFood > dogs[i].recommendedFood ? `much` : `little`
+          dogs[i].curFood > dogs[i].recFood ? `much` : `little`
         }`
       );
     }
@@ -191,7 +191,7 @@ const sarahDog = dogs
 
 // const oetm = [];
 // dogs.map((_, i) => {
-//   if (dogs[i].curFood > dogs[i].recommendedFood) {
+//   if (dogs[i].curFood > dogs[i].recFood) {
 //     oetm.push(dogs[i].owners);
 //   }
 // });
@@ -202,7 +202,7 @@ const sarahDog = dogs
 const ownersEatTooMuch = [];
 const ownersEatTooLittle = [];
 dogs.map((_, i) =>
-  dogs[i].curFood > dogs[i].recommendedFood
+  dogs[i].curFood > dogs[i].recFood
     ? ownersEatTooMuch.push(...dogs[i].owners)
     : ownersEatTooLittle.push(...dogs[i].owners)
 );
@@ -217,9 +217,33 @@ console.log(
   `${ownersEatTooLittle[0]}, ${ownersEatTooLittle[1]} and ${ownersEatTooLittle[2]}'s dogs eat too little!'}`
 );
 
-// 5. Log to the console whether there is any dog eating exactly the amount of food that is recommended (just true or false)
+// 5.
+console.log(dogs.some((_, i) => dogs[i].curFood === dogs[i].recFood));
+
+// 6.
 console.log(
-  dogs.includes((_, i) => dogs[i].curFood === dogs[i].recommendedFood)
+  dogs.some(
+    (_, i) =>
+      dogs[i].curFood > dogs[i].recFood * 0.9 &&
+      dogs[i].curFood < dogs[i].recFood * 1.1
+  )
 );
 
-// 6. Log to the console whether there is any dog eating an okay amount of food (just true or false)
+// 7.
+const dogsOkAmount = [];
+dogs.some((_, i) => {
+  if (
+    dogs[i].curFood > dogs[i].recFood * 0.9 &&
+    dogs[i].curFood < dogs[i].recFood * 1.1
+  ) {
+    dogsOkAmount.push(...dogs[i].owners);
+  }
+});
+console.log(`The dog that eats an ok amount belongs to ${dogsOkAmount}`);
+
+// 8. Create a shallow copy of the 'dogs' array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects �)
+
+const copyDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+
+// .map((arr, i) => console.log(arr))
+console.log(copyDogs);
