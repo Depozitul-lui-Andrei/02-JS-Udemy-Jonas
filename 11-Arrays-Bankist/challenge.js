@@ -161,3 +161,65 @@ const dogs = [
   { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
   { weight: 32, curFood: 340, owners: ['Michael'] },
 ];
+
+// 1.
+const recommendedFood = dogs.map(
+  (weight, i) => (dogs[i].recommendedFood = dogs[i].weight ** 0.75 * 28)
+);
+console.log(dogs);
+
+// 2.
+const sarahDog = dogs
+  .map((_, i) => dogs[i].owners)
+  .forEach(function (arr, i) {
+    if (arr.includes(`Sarah`)) {
+      // console.log(i);
+      // if (dogs[i].curFood > dogs[i].recommendedFood) {
+      //   console.log(`Sarah's dog is eating too much`);
+      // } else if (dogs[i].curFood < dogs[i].recommendedFood) {
+      //   console.log(`Sarah's dog is eating too little`);
+      // }
+      console.log(
+        `Sarah's dog is eating too ${
+          dogs[i].curFood > dogs[i].recommendedFood ? `much` : `little`
+        }`
+      );
+    }
+  });
+
+// 3.
+
+// const oetm = [];
+// dogs.map((_, i) => {
+//   if (dogs[i].curFood > dogs[i].recommendedFood) {
+//     oetm.push(dogs[i].owners);
+//   }
+// });
+// const ownersEatTooMuch = oetm.flat();
+// // console.log(oetm);
+// console.log(ownersEatTooMuch);
+
+const ownersEatTooMuch = [];
+const ownersEatTooLittle = [];
+dogs.map((_, i) =>
+  dogs[i].curFood > dogs[i].recommendedFood
+    ? ownersEatTooMuch.push(...dogs[i].owners)
+    : ownersEatTooLittle.push(...dogs[i].owners)
+);
+console.log(ownersEatTooMuch);
+console.log(ownersEatTooLittle);
+
+// 4.
+console.log(
+  `${ownersEatTooMuch[0]}, ${ownersEatTooMuch[1]} and ${ownersEatTooMuch[2]}'s dogs eat too much!'}`
+);
+console.log(
+  `${ownersEatTooLittle[0]}, ${ownersEatTooLittle[1]} and ${ownersEatTooLittle[2]}'s dogs eat too little!'}`
+);
+
+// 5. Log to the console whether there is any dog eating exactly the amount of food that is recommended (just true or false)
+console.log(
+  dogs.includes((_, i) => dogs[i].curFood === dogs[i].recommendedFood)
+);
+
+// 6. Log to the console whether there is any dog eating an okay amount of food (just true or false)
