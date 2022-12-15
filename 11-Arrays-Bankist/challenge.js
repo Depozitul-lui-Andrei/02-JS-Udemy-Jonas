@@ -168,6 +168,10 @@ const recFood = dogs.map(
 );
 console.log(dogs);
 
+// Jonas
+dogs.forEach((dog) => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+console.log(dogs);
+
 // 2.
 const sarahDog = dogs
   .map((_, i) => dogs[i].owners)
@@ -186,6 +190,15 @@ const sarahDog = dogs
       );
     }
   });
+
+// Jonas
+const dogSarah = dogs.find((dog) => dog.owners.includes(`Sarah`));
+console.log(dogSarah);
+console.log(
+  `Sarah's dog is eating ${
+    dogSarah.curFood > dogSarah.recFood ? `much` : `little`
+  }`
+);
 
 // 3.
 
@@ -209,6 +222,8 @@ dogs.map((_, i) =>
 console.log(ownersEatTooMuch);
 console.log(ownersEatTooLittle);
 
+// Jonas
+// const ownersEatTooMuch2 =
 // 4.
 console.log(
   `${ownersEatTooMuch[0]}, ${ownersEatTooMuch[1]} and ${ownersEatTooMuch[2]}'s dogs eat too much!'}`
