@@ -131,6 +131,8 @@ console.log(calcAverageHumanAge4([5, 2, 4, 1, 15, 8, 3]));
 console.log(calcAverageHumanAge4([16, 6, 10, 5, 6, 1, 4]));
 */
 
+/*
+
 `Coding Challenge #4
 Julia and Kate are still studying dogs, and this time they are studying if dogs are eating too much or too little.
 Eating too much means the dog's current food portion is larger than the recommended portion, and eating too little is the opposite.
@@ -164,7 +166,7 @@ const dogs = [
 
 // 1.
 const recFood = dogs.map(
-  (weight, i) => (dogs[i].recFood = dogs[i].weight ** 0.75 * 28)
+  (dog, i) => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28))
 );
 console.log(dogs);
 
@@ -177,12 +179,6 @@ const sarahDog = dogs
   .map((_, i) => dogs[i].owners)
   .forEach(function (arr, i) {
     if (arr.includes(`Sarah`)) {
-      // console.log(i);
-      // if (dogs[i].curFood > dogs[i].recFood) {
-      //   console.log(`Sarah's dog is eating too much`);
-      // } else if (dogs[i].curFood < dogs[i].recFood) {
-      //   console.log(`Sarah's dog is eating too little`);
-      // }
       console.log(
         `Sarah's dog is eating too ${
           dogs[i].curFood > dogs[i].recFood ? `much` : `little`
@@ -195,67 +191,80 @@ const sarahDog = dogs
 const dogSarah = dogs.find((dog) => dog.owners.includes(`Sarah`));
 console.log(dogSarah);
 console.log(
-  `Sarah's dog is eating ${
+  `Sarah's dog is eating too ${
     dogSarah.curFood > dogSarah.recFood ? `much` : `little`
   }`
 );
 
 // 3.
-
-// const oetm = [];
-// dogs.map((_, i) => {
-//   if (dogs[i].curFood > dogs[i].recFood) {
-//     oetm.push(dogs[i].owners);
-//   }
-// });
-// const ownersEatTooMuch = oetm.flat();
-// // console.log(oetm);
-// console.log(ownersEatTooMuch);
-
 const ownersEatTooMuch = [];
 const ownersEatTooLittle = [];
-dogs.map((_, i) =>
-  dogs[i].curFood > dogs[i].recFood
-    ? ownersEatTooMuch.push(...dogs[i].owners)
-    : ownersEatTooLittle.push(...dogs[i].owners)
+dogs.map((dog, i) =>
+  dog.curFood > dog.recFood
+    ? ownersEatTooMuch.push(...dog.owners)
+    : ownersEatTooLittle.push(...dog.owners)
 );
 console.log(ownersEatTooMuch);
 console.log(ownersEatTooLittle);
 
 // Jonas
-// const ownersEatTooMuch2 =
+const ownersEatTooMuch2 = dogs
+  .filter((dog) => dog.curFood > dog.recFood)
+  .flatMap((dog) => dog.owners);
+console.log(ownersEatTooMuch2);
+const ownersEatTooLittle2 = dogs
+  .filter((dog) => dog.curFood < dog.recFood)
+  .flatMap((dog) => dog.owners);
+console.log(ownersEatTooLittle2);
+
 // 4.
 console.log(
-  `${ownersEatTooMuch[0]}, ${ownersEatTooMuch[1]} and ${ownersEatTooMuch[2]}'s dogs eat too much!'}`
+  `${ownersEatTooMuch[0]}, ${ownersEatTooMuch[1]} and ${ownersEatTooMuch[2]}'s dogs eat too much!`
 );
 console.log(
-  `${ownersEatTooLittle[0]}, ${ownersEatTooLittle[1]} and ${ownersEatTooLittle[2]}'s dogs eat too little!'}`
+  `${ownersEatTooLittle[0]}, ${ownersEatTooLittle[1]} and ${ownersEatTooLittle[2]}'s dogs eat too little!`
 );
 
+// Jonas
+console.log(`${ownersEatTooMuch.join(` and `)}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(` and `)}'s dogs eat too little!`);
+
 // 5.
-console.log(dogs.some((_, i) => dogs[i].curFood === dogs[i].recFood));
+console.log(dogs.some((dog, i) => dog.curFood === dog.recFood));
+
+// Jonas
+console.log(dogs.some((dog) => dog.curFood === dog.recFood));
 
 // 6.
 console.log(
   dogs.some(
-    (_, i) =>
-      dogs[i].curFood > dogs[i].recFood * 0.9 &&
-      dogs[i].curFood < dogs[i].recFood * 1.1
+    (dog, i) =>
+      dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1
   )
 );
 
+// Jonas
+const checkEatingOk = (dog) =>
+  dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+console.log(dogs.some(checkEatingOk));
+
 // 7.
 const dogsOkAmount = [];
-dogs.some((_, i) => {
-  if (
-    dogs[i].curFood > dogs[i].recFood * 0.9 &&
-    dogs[i].curFood < dogs[i].recFood * 1.1
-  ) {
-    dogsOkAmount.push(...dogs[i].owners);
+dogs.some((dog, i) => {
+  if (dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1) {
+    dogsOkAmount.push(...dog.owners);
   }
 });
 console.log(`The dog that eats an ok amount belongs to ${dogsOkAmount}`);
 
+// Jonas
+console.log(dogs.filter(checkEatingOk));
+
 // 8.
 const copyDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 console.log(copyDogs);
+
+// Jonas
+const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+console.log(dogsSorted);
+*/
