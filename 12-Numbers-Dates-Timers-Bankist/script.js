@@ -392,3 +392,42 @@ console.log(PI);
 console.log(Number(`230_000`));
 console.log(parseInt(`230_000`));
 */
+
+/*
+/////////////////////////////////////////////////
+// 🔴 Working with bigInt
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(34529875492850976825342624356243523215342n);
+console.log(BigInt(34529875492850));
+
+// Operations
+console.log(10000n + 10000n);
+console.log(
+  897510498732897423874389275098237459n * 98037259823750975029874958472985243n
+);
+// console.log(Math.sqrt(16n));
+
+const huge = 98509284572897502305725423905n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(20n == 20);
+console.log(20n == `20`);
+
+// String concatenation
+console.log(huge + ` is REALLY BIG!!!`);
+
+// Divisions
+console.log(11n / 3n);
+console.log(10 / 3);
+*/
