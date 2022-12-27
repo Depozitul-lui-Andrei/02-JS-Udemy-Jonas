@@ -581,3 +581,18 @@ console.log(
   new Intl.NumberFormat(navigator.language, options).format(num)
 );
 */
+
+/////////////////////////////////////////////////
+// 🔴 Timers: settimeout and setinterval
+
+const ingredients = [`olives`, `spinach`];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
+);
+// time is in miliseconds
+console.log(`Waiting...`);
+
+if (ingredients.includes(`spinach`)) clearTimeout(pizzaTimer);
+// if includes spinach -> timer is canceled
