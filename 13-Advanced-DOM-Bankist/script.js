@@ -35,3 +35,6 @@ document.addEventListener('keydown', function (e) {
 
 /////////////////////////////////////////////////
 // 🔴 How the DOM really works
+
+/////////////////////////////////////////////////
+// 🔴 Selecting, creating and deleting elements
