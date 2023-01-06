@@ -137,20 +137,20 @@ const section1 = document.querySelector(`#section--1`);
 
 btnScrollTo.addEventListener(`click`, function (e) {
   const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+  // console.log(s1coords);
 
-  console.log(e.target.getBoundingClientRect());
+  // console.log(e.target.getBoundingClientRect());
 
-  console.log(`Current scroll (X/Y)`, window.pageXOffset, window.pageYOffset);
+  // console.log(`Current scroll (X/Y)`, window.pageXOffset, window.pageYOffset);
 
-  console.log(
-    `height/width viewport`,
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  // console.log(
+  //   `height/width viewport`,
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
 
   // Scrolling (added smooth)
-  // old way
+  // 🟢old way
   // window.scrollTo(
   //   s1coords.left + window.pageXOffset,
   //   s1coords.top + window.pageYOffset
@@ -161,7 +161,7 @@ btnScrollTo.addEventListener(`click`, function (e) {
   //   behavior: `smooth`,
   // });
 
-  // 🟢new way
+  // 🟢 NEW way
   section1.scrollIntoView({
     behavior: `smooth`,
   });
