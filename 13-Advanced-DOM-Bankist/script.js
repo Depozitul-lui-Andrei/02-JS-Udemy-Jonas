@@ -166,3 +166,23 @@ btnScrollTo.addEventListener(`click`, function (e) {
     behavior: `smooth`,
   });
 });
+
+/////////////////////////////////////////////////
+// 🔴 Types of events and event handlers
+const h1 = document.querySelector(`h1`);
+
+const alertH1 = function (e) {
+  alert(`addEventListener: Great! You are reading the heading :D`);
+  // console.log(`addEventListener: Great! You are reading the heading :D`);
+};
+
+h1.addEventListener(`mouseenter`, alertH1);
+
+// 🟢removing event listner after 3 sec .removeEventListener
+setTimeout(() => h1.removeEventListener(`mouseenter`, alertH1), 3000);
+
+// old way
+// h1.onmouseenter = function (e) {
+//   // alert(`addEventListener: Great! You are reading the heading :D`);
+//   console.log(`addEventListener: Great! You are reading the heading :D`);
+// };
