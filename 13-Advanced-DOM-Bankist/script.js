@@ -186,3 +186,6 @@ setTimeout(() => h1.removeEventListener(`mouseenter`, alertH1), 3000);
 //   // alert(`addEventListener: Great! You are reading the heading :D`);
 //   console.log(`addEventListener: Great! You are reading the heading :D`);
 // };
+
+/////////////////////////////////////////////////
+// 🔴 Events propagation bubbling and capturing
