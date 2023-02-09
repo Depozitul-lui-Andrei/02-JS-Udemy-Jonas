@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////
 // 🔴 OOP in JavaScript
 
-// /*
+/*
 ///////////////////////////////////////////////////
 // 🔴 Constructor functions and the new operators
 
@@ -39,7 +39,7 @@ const jay = `Jay`;
 
 console.log(jonas instanceof Person);
 console.log(jay instanceof Person);
-// */
+
 
 ///////////////////////////////////////////////////
 // 🔴 Prototypes (prototype of linked objects)
@@ -66,3 +66,7 @@ console.log(jonas.species, matilda.species);
 
 console.log(jonas.hasOwnProperty(`firstName`));
 console.log(jonas.hasOwnProperty(`species`));
+*/
+
+///////////////////////////////////////////////////
+// 🔴 OOP in JavaScript
