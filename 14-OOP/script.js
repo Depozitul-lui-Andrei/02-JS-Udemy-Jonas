@@ -72,3 +72,6 @@ console.log(jonas.hasOwnProperty(`species`));
 // 🔴 OOP in JavaScript
 // differences between classical oop and prototypes oop
 // costructor functions / es6 classes / object.create()
+
+///////////////////////////////////////////////////
+// 🔴 Prototypal inheritance and the prototype chain
