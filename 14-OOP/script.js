@@ -141,3 +141,26 @@ console.log(mercedes);
 console.log(mercedes.brake());
 console.log(mercedes.brake());
 console.log(mercedes.accelerate());
+
+// Jonas's way
+const Car2 = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car2.prototype.accelerate = function () {
+  this.speed = this.speed + 10;
+  console.log(`${this.make} is going at ${this.speed}km/h`);
+};
+Car2.prototype.brake = function () {
+  this.speed = this.speed - 5;
+  console.log(`${this.make} is going at ${this.speed}km/h`);
+};
+
+const bmw2 = new Car2(`BMW`, 120);
+const mercedes2 = new Car2(`Mercedes`, 95);
+
+bmw2.accelerate();
+bmw2.accelerate();
+bmw2.brake();
+bmw2.accelerate();
