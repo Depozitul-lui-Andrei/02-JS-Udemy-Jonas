@@ -12,9 +12,9 @@
 // 🔴 Constructor functions and the new operators
 
 // creating object programmatically using function constructor
-const Person = function (firstName, birthYear) {
+const Person = function (fullName, birthYear) {
   // Instance properties
-  this.firstName = firstName;
+  this.fullName = fullName;
   this.birthYear = birthYear;
 
   // Never do this (create function in constructor function which is blueprint for objects in OOP) code performance is affected
@@ -63,7 +63,7 @@ console.log(jonas);
 console.log(matilda);
 console.log(jonas.species, matilda.species);
 
-console.log(jonas.hasOwnProperty(`firstName`));
+console.log(jonas.hasOwnProperty(`fullName`));
 console.log(jonas.hasOwnProperty(`species`));
 // */
 
@@ -174,8 +174,8 @@ bmw2.accelerate();
 
 // class declaration
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
@@ -185,21 +185,62 @@ class PersonCl {
   }
 
   greet() {
-    console.log(`Hey ${this.firstName}`);
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // Whenever we try to set a property that already exists... use _ before property
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(` `)) this._fullName = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get fullName() {
+    return this._fullName;
   }
 }
 
-const jessica = new PersonCl(`Jessica`, 1996);
+const jessica = new PersonCl(`Jessica Davis`, 1996);
 console.log(jessica);
 jessica.calcAge();
+
+console.log(jessica.age);
 
 console.log(jessica.__proto__ === PersonCl.prototype);
 
 // PersonCl.prototype.greet = function () {
-//   console.log(`Hey ${this.firstName}`);
+//   console.log(`Hey ${this.fullName}`);
 // };
 jessica.greet();
 
 // 1. Classes are NOT hoisted
 // 2. Classes are first-class citizens
 // 3. Classes are executed in strict mode
+
+///////////////////////////////////////////////////
+// 🔴 Setters and getters
+
+const walter = new PersonCl(`Walter White`, 1965);
+
+const account = {
+  owner: `Jonas`,
+  movements: [200, 300, 450, 550, 600],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+// !!!
+account.latest = 50;
+console.log(account.movements);
