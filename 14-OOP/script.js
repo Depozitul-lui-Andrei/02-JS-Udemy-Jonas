@@ -1,6 +1,6 @@
 'use strict';
 // 🌟🔴🟢🌟
-
+/*
 ///////////////////////////////////////////////////
 // 🔴 What is object-oriented programming?
 
@@ -65,7 +65,7 @@ console.log(jonas.species, matilda.species);
 
 console.log(jonas.hasOwnProperty(`fullName`));
 console.log(jonas.hasOwnProperty(`species`));
-// */
+
 
 ///////////////////////////////////////////////////
 // 🔴 OOP in JavaScript
@@ -326,3 +326,43 @@ console.log(ford);
 console.log(ford.speedUS);
 ford.speedUS = 50;
 console.log(ford);
+*/
+
+///////////////////////////////////////////////////
+// 🔴 CInheritance between 'classes': constructor functions
+const Person = function (fullName, birthYear) {
+  this.fullName = fullName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// linking prototypes
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student(`Mike`, 2020, `Computer Science`);
+console.log(mike);
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+
+console.log(mike instanceof Student);
+console.log(mike instanceof Person);
+console.log(mike instanceof Object);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
+console.log(mike);
