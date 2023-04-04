@@ -328,6 +328,7 @@ ford.speedUS = 50;
 console.log(ford);
 */
 
+/*
 ///////////////////////////////////////////////////
 // 🔴 CInheritance between 'classes': constructor functions
 const Person = function (fullName, birthYear) {
@@ -514,3 +515,60 @@ const jay = Object.create(StudentProto);
 jay.init(`Jay`, 2010, `Computer Science`);
 jay.introduce();
 jay.calcAge();
+*/
+///////////////////////////////////////////////////
+// 🔴 Another class example
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this._pin = pin;
+    // protected property
+    this._movements = [];
+    this.locale = navigator.languate;
+
+    console.log(`Thanks for opening an account, ${owner}`);
+  }
+  // Public interface of out objects
+  getMovements() {
+    return this._movements;
+  }
+
+  deposit(val) {
+    this._movements.push(val);
+  }
+
+  withdrawal(val) {
+    this.deposit(-val);
+  }
+
+  _approveLoan(val) {
+    return true;
+  }
+
+  requestLoan(val) {
+    if (this._approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Loan aproved`);
+    }
+  }
+}
+
+const acc1 = new Account(`Jonas`, `EUR`, 1111);
+// acc1._movements.push(250);
+// acc1._movements.push(-140);
+
+acc1.deposit(250);
+acc1.withdrawal(140);
+acc1.requestLoan(1000);
+acc1._approveLoan(1000);
+console.log(acc1.getMovements());
+
+console.log(acc1);
+console.log(acc1._pin);
+
+///////////////////////////////////////////////////
+// 🔴 Encapsulation: protected properties and methods
+
+///////////////////////////////////////////////////
+// 🔴 Encapsulation: private class fields and methods
