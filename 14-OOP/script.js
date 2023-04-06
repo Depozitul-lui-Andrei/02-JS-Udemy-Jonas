@@ -516,6 +516,7 @@ jay.init(`Jay`, 2010, `Computer Science`);
 jay.introduce();
 jay.calcAge();
 */
+
 ///////////////////////////////////////////////////
 // 🔴 Another class example
 
@@ -553,10 +554,12 @@ class Account {
 
   deposit(val) {
     this.#movements.push(val);
+    return this;
   }
 
-  withdrawal(val) {
+  withdraw(val) {
     this.deposit(-val);
+    return this;
   }
 
   requestLoan(val) {
@@ -564,6 +567,7 @@ class Account {
     if (this._approveLoan(val)) {
       this.deposit(val);
       console.log(`Loan aproved`);
+      return this;
     }
   }
 
@@ -583,12 +587,12 @@ const acc1 = new Account(`Jonas`, `EUR`, 1111);
 // acc1._movements.push(-140);
 
 acc1.deposit(250);
-acc1.withdrawal(140);
+acc1.withdraw(140);
 acc1.requestLoan(1000);
 // acc1.#approveLoan(1000);
 console.log(acc1.getMovements());
-
 console.log(acc1);
+Account.helper();
 
 ///////////////////////////////////////////////////
 // 🔴 Encapsulation: protected properties and methods
@@ -601,7 +605,10 @@ console.log(acc1);
 // Private methods
 
 // console.log(acc1.#movements);
-console.log(acc1._pin);
+// console.log(acc1._pin);
 // console.log(acc1.#approveLoan(100));
 
-Account.helper();
+///////////////////////////////////////////////////
+// 🔴 Chaining methods
+
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
